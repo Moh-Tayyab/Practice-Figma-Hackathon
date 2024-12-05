@@ -1,9 +1,10 @@
 import BestSelling from "./component/BestSelling";
 import Catgory from "./component/Catgory";
 import Explore from "./component/Explore";
-import Footer from "./component/Footer";
 import TopHeader, { Header } from "./component/Header";
 import Benefit from "./component/Services";
+
+import Footer from "./component/Footer";
 
 export default function Home() {
   return (
