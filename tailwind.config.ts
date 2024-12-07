@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       letterSpacing: {
-        '3pct': '3%'
+        '3pct': '3%',
+        '4pct': '4%'
       },
       fontFamily: { 
         poppins: ["Poppins", "sans-serif"],

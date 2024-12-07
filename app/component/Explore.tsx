@@ -11,13 +11,13 @@ const Explore = () => {
           <h2 className="text-lg bg-secondary2 tracking-widest font-semibold w-[20px] h-[40px] rounded-md  sm:text-2xl">
             
           </h2>
-          <h2 className="text-lg text-secondary2 tracking-widest font-semibold sm:text-2xl">
+          <h2 className="text-[16px] text-secondary2 tracking-widest font-semibold font-poppins sm:text-2xl">
             Our Products
           </h2>
         </div>
         {/* Heading and Left Right Arrow */}  
         <div className="text-start mb-12">
-          <h1 className="sm:text-4xl text-3xl font-semibold title-font text-Text2">
+          <h1 className="sm:text-4xl text-[36px] font-inter 4% font-semibold title-font text-Text2">
             Explore Our Collection
           </h1>
           {/* left right arrow */}
@@ -518,7 +518,6 @@ const Explore = () => {
           <button className="bg-Button2 text-white rounded-md w-[234px] h-[56px] font-medium">
           View All Products
           </button>
-         
         </div>
       </div>
     </section>

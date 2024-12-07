@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google"; // Corrected import path
 import "./globals.css";
-//import {Header} from "./component/Header";
+import Footer from "./component/Footer";
+import TopHeader, { Header } from "./component/Header";
 
 
 // Google Fonts configuration
@@ -29,7 +30,10 @@ export default function RootLayout({
       <body
         className={`${poppins.className} ${inter.className}`} // Added correct font classes
       >
+        <TopHeader />
+        <Header />
         {children}
+       <Footer />
       </body>
     </html>
   );
