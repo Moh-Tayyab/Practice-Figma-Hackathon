@@ -80,19 +80,19 @@ export const Header = () => {
             Home
           </Link>
           <Link
-            href="/About"
+            href="/about"
             className="text-Text2 hover:underline font-normal font-poppins text-[16px]"
           >
             About
           </Link>
           <Link
-            href="/Contact"
+            href="/contact"
             className="text-Text2 hover:underline font-normal font-poppins text-[16px]"
           >
             Contact
           </Link>
           <Link
-            href="/Services"
+            href="/signup"
             className="text-Text2 hover:underline font-normal font-poppins text-[16px]"
           >
             Sign Up
@@ -100,7 +100,7 @@ export const Header = () => {
         </nav>
 
         {/* Search and Icons */}
-        <div className="hidden lg:flex gap-8 items-center">
+        <div className="hidden lg:flex gap-8 items-center hover:scale-100">
           <Link href={'/'}>
           <button className="flex items-center w-[243px] h-[38px] gap-[10px] px-5 rounded bg-secondary">
             <input
@@ -110,17 +110,17 @@ export const Header = () => {
             />
             
             
-            <IoSearch className="h-[32px] w-[32px] text-center" />
+            <IoSearch className="h-[32px] w-[32px] text-center hover:scale-110" />
           </button>
           </Link>
           <Link href={'/whishList'}>
-            <FaRegHeart className="h-[32px] w-[32px]" />
+            <FaRegHeart className="h-[32px] w-[32px] hover:scale-110 hover:text-Button2 " />
           </Link>
-          <Link href={'/'}>
-            <MdOutlineShoppingCart className="h-[32px] w-[32px]" />
+          <Link href={'/cart'}>
+            <MdOutlineShoppingCart className="h-[32px] w-[32px] hover:scale-110 hover:text-Button2" />
           </Link>
-          <Link href={'/'}>
-            <FiUser className="h-[32px] w-[32px]" />
+          <Link href={'/login'}>
+            <FiUser className="h-[32px] w-[32px] hover:scale-110 hover:text-Button1" />
           </Link>
         </div>
       </div>
