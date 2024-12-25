@@ -4,8 +4,18 @@ import { FiTwitter } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
 import { RiLinkedinLine } from "react-icons/ri";
 
+// Define types for Card props
+interface CardProps {
+  name: string;
+  position: string;
+  imageSrc: string;
+  twitter?: boolean;
+  instagram?: boolean;
+  linkedin?: boolean;
+}
+
 // Reusable Card Component
-const Card = ({ name, position, imageSrc, twitter, instagram, linkedin }) => (
+const Card: React.FC<CardProps> = ({ name, position, imageSrc, twitter, instagram, linkedin }) => (
   <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
     {/* Card Link */}
     <Link
