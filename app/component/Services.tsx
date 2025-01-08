@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <section className="text-Text2 body-font">
   <div className="container px-5 py-24 mx-auto">
-    <div className="text-center mb-20"> 
+    <div className="text-center mb-10"> 
     </div>
     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
       <div className="p-4 md:w-1/3 flex flex-col text-center items-center">

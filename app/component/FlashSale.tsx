@@ -1,36 +1,86 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const BestSelling = () => {
+const FlashSale = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-Text2 body-font">
       {/* Container for the whole section */}
       <div className="container px-5 py-24 mx-auto">
-        {/* Section Title */}
-        <div className="text-start mb-5 flex gap-5 justify-start items-start">
-          <h2 className="text-lg bg-secondary2 tracking-widest font-semibold w-[20px] h-[40px] rounded-md sm:text-2xl"></h2>
+        <div className="text-start mb-5 flex gap-5 justify-start items-start ">
+          <h2 className="text-lg bg-secondary2 tracking-widest font-semibold w-[20px] h-[40px] rounded-md  sm:text-2xl"></h2>
           <h2 className="text-[16px] text-secondary2 tracking-widest font-semibold font-poppins sm:text-2xl">
-            This Month
+            Today’s
           </h2>
         </div>
-        {/* Heading and View All Button */}
-        <div className="text-start mb-12 flex justify-between items-center">
-          <h1 className="sm:text-4xl text-[36px] 4% font-semibold font-inter title-font text-Text2">
-            Best Selling Products
+        {/* Heading and Left Right Arrow */}
+        <div className="text-start mb-12 flex flex-row justify-between items-center sm:flex-row flex-col">
+          {/* Title */}
+          <h1 className="sm:text-4xl lg:text-[36px] font-semibold font-inter text-Text2 mb-4 sm:mb-0 4%">
+            Flash Sales
           </h1>
-          <button className="text-primary bg-Button2 px-8 hover:bg-primary py-2 rounded-md text-[16px] font-medium">
-            View All
-          </button>
+
+          {/* Time Duration */}
+          <div className="flex justify-center items-center gap-4 mb-4 sm:mb-0">
+            {/* Days */}
+            <div className="p-2 text-center">
+              <p className="leading-relaxed">Days</p>
+              <h2 className="title-font font-medium text-3xl text-Text2">
+                03<span className="text-secondary2">:</span>
+              </h2>
+            </div>
+
+            {/* Hours */}
+            <div className="p-2 text-center">
+              <p className="leading-relaxed">Hours</p>
+              <h2 className="title-font font-medium text-3xl text-Text2">
+                23<span className="text-secondary2">:</span>
+              </h2>
+            </div>
+
+            {/* Minutes */}
+            <div className="p-2 text-center">
+              <p className="leading-relaxed">Minutes</p>
+              <h2 className="title-font font-medium text-3xl text-Text2">
+                19<span className="text-secondary2">:</span>
+              </h2>
+            </div>
+
+            {/* Seconds */}
+            <div className="p-2 text-center">
+              <p className="leading-relaxed">Seconds</p>
+              <h2 className="title-font font-medium text-3xl text-Text2">26</h2>
+            </div>
+          </div>
+
+          {/* Arrows */}
+          <div className="lg:flex flex-row items-center gap-4 sm:block hidden">
+            <Image
+              alt="arrow-left"
+              src="/icons/Left .png"
+              width={46}
+              height={46}
+              className="cursor-pointer hover:scale-110"
+            />
+            <Image
+              alt="arrow-right"
+              src="/icons/Right.png"
+              width={46}
+              height={46}
+              className="cursor-pointer hover:scale-110"
+            />
+          </div>
         </div>
-        {/* Products Grid */}
+
         <div className="flex flex-wrap -m-4 relative justify-center items-center text-center">
-          {/* Product Card */}
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
+              <div className="absolute top-4 left-4 flex flex-col items-start space-y-2">
+                <p className="px-2 py-1 bg-secondary2 text-primary rounded-md">
+                  -40%
+                </p>
+              </div>
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -51,41 +101,46 @@ const BestSelling = () => {
                 <Image
                   alt=""
                   className="object-contain"
-                  src="/products/bp1.png"
-                  width={140}
-                  height={146}
+                  src="/products/fp1.png"
+                  width={172}
+                  height={152}
                 />
               </div>
             </Link>
-            {/* Product Details */}
+            {/* Product Details  */}
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-                The north coat
+                HAVIT HV-G92 Gamepad
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
-                <p className="text-secondary2 text-[16px] font-medium">$260</p>
-                <p className="font-medium text-gray-600 line-through">$360</p>
+                <p className="text-secondary2 text-[16px] font-medium">$120</p>
+                <p className="font-medium text-gray-600 line-through">$160</p>
               </div>
               {/* Ratings */}
               <div className="mt-2 flex items-center gap-2">
                 <Image
                   alt="star-icon"
-                  src="/icons/Star5.png"
+                  src="/icons/Star6.png"
                   width={100}
                   height={20}
                 />
-                <span className="text-gray-600 font-semibold">(65)</span>
+                <span className="text-gray-600 font-semibold">(88)</span>
               </div>
             </div>
           </div>
-          {/* Product Card */}  
+
+          {/* card 2  */}
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
+              <div className="absolute top-4 left-4 flex flex-col items-start space-y-2">
+                <p className="px-2 py-1 bg-secondary2 text-primary rounded-md">
+                  -40%
+                </p>
+              </div>
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -106,17 +161,17 @@ const BestSelling = () => {
                 <Image
                   alt=""
                   className="object-contain"
-                  src="/products/bp2.png"
-                  width={140}
-                  height={146}
+                  src="/products/fp2.png"
+                  width={191}
+                  height={101}
                 />
               </div>
             </Link>
-            {/* Product Details */}
+            {/* Product Details  */}
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-              Gucci duffle bag
+                AK-900 Wired Keyboard
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
@@ -131,16 +186,20 @@ const BestSelling = () => {
                   width={100}
                   height={20}
                 />
-                <span className="text-gray-600 font-semibold">(65)</span>
+                <span className="text-gray-600 font-semibold">(75)</span>
               </div>
             </div>
           </div>
-          {/* Product Card */}  
+          {/* card 3 */}
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
+              <div className="absolute top-4 left-4 flex flex-col items-start space-y-2">
+                <p className="px-2 py-1 bg-secondary2 text-primary rounded-md">
+                  -40%
+                </p>
+              </div>
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -161,22 +220,22 @@ const BestSelling = () => {
                 <Image
                   alt=""
                   className="object-contain"
-                  src="/products/bp3.png"
-                  width={140}
-                  height={146}
+                  src="/products/fp3.png"
+                  width={170}
+                  height={129}
                 />
               </div>
             </Link>
-            {/* Product Details */}
+            {/* Product Details  */}
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-              RGB liquid CPU Cooler
+                IPS LCD Gaming Monitor
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
-                <p className="text-secondary2 text-[16px] font-medium">$160</p>
-                <p className="font-medium text-gray-600 line-through">$170</p>
+                <p className="text-secondary2 text-[16px] font-medium">$370</p>
+                <p className="font-medium text-gray-600 line-through">$400</p>
               </div>
               {/* Ratings */}
               <div className="mt-2 flex items-center gap-2">
@@ -186,16 +245,20 @@ const BestSelling = () => {
                   width={100}
                   height={20}
                 />
-                <span className="text-gray-600 font-semibold">(65)</span>
+                <span className="text-gray-600 font-semibold">(99)</span>
               </div>
             </div>
           </div>
-          {/* Product Card */}
+          {/* card 4 */}
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
+              <div className="absolute top-4 left-4 flex flex-col items-start space-y-2">
+                <p className="px-2 py-1 bg-secondary2 text-primary rounded-md">
+                  -40%
+                </p>
+              </div>
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -216,39 +279,45 @@ const BestSelling = () => {
                 <Image
                   alt=""
                   className="object-contain"
-                  src="/products/bp4.png"
-                  width={140}
-                  height={146}
+                  src="/products/fp4.png"
+                  width={107}
+                  height={180}
                 />
               </div>
             </Link>
-            {/* Product Details */}
+            {/* Product Details  */}
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-              Small BookSelf
+                IPS LCD Gaming Monitor
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
-                <p className="text-secondary2 text-[16px] font-medium">$360</p>
-                <p className="font-medium text-gray-600 line-through">$470</p>
+                <p className="text-secondary2 text-[16px] font-medium">$375</p>
+                <p className="font-medium text-gray-600 line-through">$400</p>
               </div>
               {/* Ratings */}
               <div className="mt-2 flex items-center gap-2">
                 <Image
                   alt="star-icon"
-                  src="/icons/Star5.png"
+                  src="/icons/Star6.png"
                   width={100}
                   height={20}
                 />
-                <span className="text-gray-600 font-semibold">(65)</span>
+                <span className="text-gray-600 font-semibold">(99)</span>
               </div>
             </div>
           </div>
+        </div>
+        {/* Pagination */}
+        <div className="flex justify-center gap-4 mt-12">
+          <button className="bg-Button2 text-white rounded-md w-[234px] h-[56px] font-medium">
+            View All Products
+          </button>
         </div>
       </div>
     </section>
   );
 };
 
-export default BestSelling;
+export default FlashSale;

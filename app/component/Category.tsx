@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 // Define the Category component
-const Catgory = () => {
+const Category = () => {
   return (
     // Section to define the whole category container
     <section className="text-Text2 body-font">
@@ -12,13 +12,13 @@ const Catgory = () => {
           <h2 className="text-lg bg-secondary2 tracking-widest font-semibold w-[20px] h-[40px] rounded-md  sm:text-2xl">
             
           </h2>
-          <h2 className="text-lg text-secondary2 tracking-widest font-semibold sm:text-2xl">
+          <h2 className="text-[16px] text-secondary2 tracking-widest font-semibold font-poppins sm:text-2xl">
           Categories
           </h2>
         </div>
         {/* Section header */}
         <div className="flex flex-col text-start w-full mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-Text2">
+          <h1 className="sm:text-3xl text-[36px] font-semibold font-inter 4% title-font mb-4 text-Text2">
             Browse By Category
           </h1>
         </div>
@@ -26,7 +26,7 @@ const Catgory = () => {
         {/* Flex container for category cards */}
         <div className="flex flex-wrap -m-4 text-center">
           {/* Category Card: Phones */}
-          <div className="p-4 md:w-1/6 sm:w-1/3 w-full">
+          <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2">
               <Image
                 src="/icons/CellPhone.png" // Image source for the icon
@@ -41,7 +41,7 @@ const Catgory = () => {
 
           {/* Add more categories here by duplicating the block above */}
           {/* Example: Laptops */}
-          <div className="p-4 md:w-1/6 sm:w-1/3 w-full">
+          <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2">
               <Image
                 src="/icons/Computer.png" // Image source for the computer icon
@@ -55,7 +55,7 @@ const Catgory = () => {
           </div>
 
           {/* Example: Watches */}
-          <div className="p-4 md:w-1/6 sm:w-1/3 w-full">
+          <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2">
               <Image
                 src="/icons/SmartWatch.png" // Image source for the watch icon
@@ -69,7 +69,7 @@ const Catgory = () => {
           </div>
 
           {/* Camera */}
-          <div className="p-4 md:w-1/6 sm:w-1/3 w-full">
+          <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center  hover:bg-secondary2">
               <Image
                 src="/icons/Camera.png" // Image source for the camera icon
@@ -84,7 +84,7 @@ const Catgory = () => {
             </div>
           </div>
           {/* Headphone */}
-          <div className="p-4 md:w-1/6 sm:w-1/3 w-full">
+          <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2">
               <Image
                 src="/icons/Headphone.png" // Image source for the headphone icon
@@ -99,7 +99,7 @@ const Catgory = () => {
             </div>
           </div>
           {/* Gaming */}
-          <div className="p-4 md:w-1/6 sm:w-1/3 w-full">
+          <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2">
               <Image
                 src="/icons/Gaming.png" // Image source for the gaming icon
@@ -119,4 +119,4 @@ const Catgory = () => {
   );
 };
 
-export default Catgory;
+export default Category;

@@ -1,20 +1,26 @@
-import BestSelling from "./component/BestSelling";
-import Catgory from "./component/Catgory";
+ import BestSelling from "./component/BestSelling";
+import Catgory from "./component/Category";
 import Explore from "./component/Explore";
-import Footer from "./component/Footer";
-import TopHeader, { Header } from "./component/Header";
 import Benefit from "./component/Services";
+import NewArrival from "./component/NewArrival";
+import CT from "./component/CT";
+import HeroSection from "./component/HeroSection";
+import FlashSale from "./component/FlashSale";
+
 
 export default function Home() {
   return (
    <main>
-    <TopHeader />
-    <Header />
-    <Explore />
+   
+    <HeroSection />
+    <FlashSale />
     <Catgory />
     <BestSelling />
+    <CT />
+    <Explore />
+    <NewArrival />
    <Benefit />
-   <Footer />
+  
    </main>
   );
 }
