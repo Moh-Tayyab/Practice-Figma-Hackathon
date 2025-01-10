@@ -6,12 +6,12 @@ import NewArrival from "./component/NewArrival";
 import CT from "./component/CT";
 import HeroSection from "./component/HeroSection";
 import FlashSale from "./component/FlashSale";
+//import ShipmentTracker from "./component/Shipment";
 
 
 export default function Home() {
   return (
    <main>
-   
     <HeroSection />
     <FlashSale />
     <Catgory />
@@ -20,7 +20,6 @@ export default function Home() {
     <Explore />
     <NewArrival />
    <Benefit />
-  
    </main>
   );
 }

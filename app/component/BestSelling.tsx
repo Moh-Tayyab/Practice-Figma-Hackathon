@@ -1,8 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+import { groq } from "next-sanity";
+import { urlFor } from "@/sanity/lib/image";
 
-const BestSelling = () => {
+const BestSelling = async () => {
+  const response = await client.fetch(groq`*[_type == "product"][0...8]`);
+  //console.log(response)
+
   return (
     <section className="text-gray-600 body-font">
       {/* Container for the whole section */}
@@ -29,8 +35,7 @@ const BestSelling = () => {
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -80,12 +85,11 @@ const BestSelling = () => {
               </div>
             </div>
           </div>
-          {/* Product Card */}  
+          {/* Product Card */}
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -116,7 +120,7 @@ const BestSelling = () => {
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-              Gucci duffle bag
+                Gucci duffle bag
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
@@ -135,12 +139,11 @@ const BestSelling = () => {
               </div>
             </div>
           </div>
-          {/* Product Card */}  
+          {/* Product Card */}
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -171,7 +174,7 @@ const BestSelling = () => {
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-              RGB liquid CPU Cooler
+                RGB liquid CPU Cooler
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
@@ -194,8 +197,7 @@ const BestSelling = () => {
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <Link
               href="#"
-              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
-            >
+              className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
               {/* Icons (Heart and Eye) */}
               <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
                 <Image
@@ -226,7 +228,7 @@ const BestSelling = () => {
             <div className="mt-4">
               {/* Product Title */}
               <h2 className="text-Text2 title-font text-lg font-medium flex items-center">
-              Small BookSelf
+                Small BookSelf
               </h2>
               {/* Price and Discount */}
               <div className="flex items-center gap-2 mt-1">
@@ -245,6 +247,65 @@ const BestSelling = () => {
               </div>
             </div>
           </div>
+          {/* Product Card */}
+          {/* Product Card */}
+          {response.slice(0, 8).map((product: any, index: number) => (
+            <div key={index} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <Link
+                href="#"
+                className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]">
+                <div className="absolute top-4 left-4 flex flex-col items-start space-y-2"></div>
+                {/* Icons (Heart and Eye) */}
+                <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
+                  <Image
+                    alt="heart-icon"
+                    src="/icons/Heart.png"
+                    width={34}
+                    height={34}
+                  />
+                  <Image
+                    alt="eye-icon"
+                    src="/icons/Eye.png"
+                    width={34}
+                    height={34}
+                  />
+                </div>
+                {/* Product Image */}
+                <div className="flex items-center justify-center h-full">
+                  <Image
+                    src={urlFor(product.image).url()}
+                    alt={product.title}
+                    className="object-contain"
+                    width={191}
+                    height={101}
+                  />
+                </div>
+              </Link>
+              {/* Product Details */}
+              <div className="mt-4">
+                {/* Product Title */}
+                <h2 className="text-Text2 title-font text-lg font-medium flex items-start">
+                  {product.title}
+                </h2>
+                {/* Price and Discount */}
+                <div className="flex items-center gap-2 mt-1">
+                  <p className="text-secondary2 text-[16px] font-medium">
+                    ${product.price}
+                  </p>
+                </div>
+                {/* Ratings */}
+                <div className="mt-2 flex items-center gap-2">
+                  <Image
+                    alt="star-icon"
+                    src="/icons/Star6.png"
+                    width={100}
+                    height={20}
+                  />
+                  <span className="text-gray-600 font-semibold">(78)</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

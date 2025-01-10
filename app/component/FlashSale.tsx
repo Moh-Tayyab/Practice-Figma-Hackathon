@@ -1,7 +1,13 @@
+
 import Image from "next/image";
 import Link from "next/link";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 
-const FlashSale = () => {
+const FlashSale = async () => {
+  const response = await client.fetch(groq `*[_type == "product"]`)
+  console.log(response);
   return (
     <section className="text-Text2 body-font">
       {/* Container for the whole section */}
@@ -308,6 +314,65 @@ const FlashSale = () => {
               </div>
             </div>
           </div>
+          {response.slice(8, 12).map((product: any, index: number) => (
+  <div key={index} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+    <Link
+      href="#"
+      className="object-contain hover:scale-110 cursor-pointer block relative bg-gray-100 rounded overflow-hidden w-[270px] h-[250px]"
+    >
+      <div className="absolute top-4 left-4 flex flex-col items-start space-y-2">
+        <p className="px-2 py-1 bg-secondary2 text-primary rounded-md">-40%</p>
+      </div>
+      {/* Icons (Heart and Eye) */}
+      <div className="absolute top-4 right-4 flex flex-col items-end space-y-2">
+        <Image
+          alt="heart-icon"
+          src="/icons/Heart.png"
+          width={34}
+          height={34}
+        />
+        <Image
+          alt="eye-icon"
+          src="/icons/Eye.png"
+          width={34}
+          height={34}
+        />
+      </div>
+      {/* Product Image */}
+      <div className="flex items-center justify-center h-full">
+        <Image
+          src={urlFor(product.image).url()}
+          alt={product.title}
+          className="object-contain"
+          width={191}
+          height={101}
+        />
+      </div>
+    </Link>
+    {/* Product Details */}
+    <div className="mt-4">
+      {/* Product Title */}
+      <h2 className="text-Text2 title-font text-lg font-medium flex items-start">
+       {product.title}
+      </h2>
+      {/* Price and Discount */}
+      <div className="flex items-center gap-2 mt-1">
+        <p className="text-secondary2 text-[16px] font-medium">${product.price}</p>
+      </div>
+      {/* Ratings */}
+      <div className="mt-2 flex items-center gap-2">
+        <Image
+          alt="star-icon"
+          src="/icons/Star6.png"
+          width={100}
+          height={20}
+        />
+        <span className="text-gray-600 font-semibold">(78)</span>
+      </div>
+    </div>
+  </div>
+))}
+
         </div>
         {/* Pagination */}
         <div className="flex justify-center gap-4 mt-12">

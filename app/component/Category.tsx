@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { CiCamera } from "react-icons/ci";
 
 // Define the Category component
 const Category = () => {
@@ -27,7 +28,7 @@ const Category = () => {
         <div className="flex flex-wrap -m-4 text-center">
           {/* Category Card: Phones */}
           <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-            <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2">
+            <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center hover:bg-secondary2 hover:text-white">
               <Image
                 src="/icons/CellPhone.png" // Image source for the icon
                 alt="cellphone-icon" // Alt text for accessibility
@@ -71,14 +72,8 @@ const Category = () => {
           {/* Camera */}
           <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center justify-center text-center  hover:bg-secondary2">
-              <Image
-                src="/icons/Camera.png" // Image source for the camera icon
-                alt="headphone-icon" // Alt text for accessibility
-                width={56} // Image width
-                height={56} // Image height
-                className="mb-4" // Add spacing below the image
-              />
-              <p className="leading-relaxed text-primary text-[16px] hover:text-primary">
+              <CiCamera className="text-Text2 w-12 h-12 inline-block hover:text-white mb-6 " />
+              <p className="leading-relaxed text-Text2 text-[16px] hover:text-primary">
                 Camera
               </p>
             </div>
@@ -91,7 +86,7 @@ const Category = () => {
                 alt="headphone-icon" // Alt text for accessibility
                 width={56} // Image width
                 height={56} // Image height
-                className="mb-4" // Add spacing below the image
+                className="mb-4 hover:text-white" // Add spacing below the image
               />
               <p className="leading-relaxed text-Text2 text-[16px] hover:text-primary">
                 Headphones
